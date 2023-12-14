@@ -1,0 +1,417 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Details</title>
+    <style>
+        @import url("https://fonts.googleapis.com/css2?family=Inter:wght@100;300&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@100;300&family=Quicksand&display=swap");
+
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body{
+            background: white;
+            height: auto;
+        }
+        .container{
+            width: 70%;
+            height: 80%;
+            padding: 10px;
+            background: aliceblue;
+            border-radius: 20px;
+            margin: 40px auto;
+        }
+        .head{
+            width: 100%;
+            height: 50px;
+            background: rgb(61, 164, 255);
+            border-radius: 10px 10px 10px 10px;
+            margin-bottom: 20px;
+        }
+        .head h1{
+            text-align: center;
+            color: white;
+            font-family: 'Inter', sans-serif;
+            line-height: 50px;
+        }
+        label{
+            font-family: 'Inter', sans-serif;
+            font-family: 'Quicksand', sans-serif;
+            margin-left: 30px;
+           
+           line-height: 50px;
+        }
+        input{
+           margin-left: 60px;
+           width: 340px;
+           height: 40px;
+           border-radius: 20px;
+           border: 1px solid rgb(196, 225, 250);
+           padding: 10px;
+        }
+        button{
+            width: 90px;
+            height: 35px;
+            border-radius: 20px;
+            border: none;
+            background:  rgb(61, 164, 255) ;
+            margin: 30px 0 30px 30%;
+        }
+        .resuld{
+            width: 95%;
+            height: auto;
+            padding: 20px;
+            background: rgb(218, 233, 247);
+            margin: 0 auto;
+            border-radius: 15px;
+            display: flex;
+            position: relative;
+        }
+        p{
+            font-family: 'Inter', sans-serif;
+            font-family: 'Quicksand', sans-serif;
+            margin: 20px;
+        }
+        #abc{
+            font-weight: bolder;
+        }
+        img{
+            width: 100px;
+            height: 100px;
+            border: 1px solid black;
+           position: absolute;
+           right: 9%;
+           top: 15%;
+           border-radius: 10px;
+           display: none;
+        }
+        @media (max-width: 600px){
+            .container{
+            width: 95%;
+            height: auto;
+           
+            margin: 20px auto;
+        }
+       
+        label{
+            font-family: 'Inter', sans-serif;
+            font-family: 'Quicksand', sans-serif;
+            margin-left: 20px;
+           
+           line-height: 50px;
+        }
+        input{
+           margin-left: 40px;
+           width: 240px;
+           height: 40px;
+           
+        }
+        button{
+            width: 90px;
+            height: 35px;
+            border-radius: 20px;
+            border: none;
+            background:  rgb(61, 164, 255) ;
+            margin: 30px 0 30px 60%;
+        }
+        .resuld{
+            width: 98%;
+            height: auto;
+            padding: 15px;
+            background: rgb(218, 233, 247);
+            margin: 0 auto;
+            border-radius: 15px;
+            display: flex;
+            position: relative;
+        
+            
+            overflow-x: scroll;
+           
+        }
+        p{
+            font-family: 'Inter', sans-serif;
+            font-family: 'Quicksand', sans-serif;
+            margin: 20px 0 20px 5px;
+            font-size: small;
+        }
+        #abc{
+            font-weight: bolder;
+        }
+        img{
+            width: 30px;
+            height: 30px;
+            border: 1px solid black;
+           position: absolute;
+           right: 5%;
+           top: 5%;
+           border-radius: 10px;
+          
+        }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="head">
+            <h1>Student Details</h1>
+        </div>
+
+        <label for="">Registration No:</label><br>
+        <input type="number" id="rno"><br>
+
+        <label for="">E-mail id:</label><br>
+        <input type="text" id="email"><br>
+
+        <label for="">Mobile No:</label><br>
+        <input type="number" id="mno"><br>
+
+        <button>Proceed</button>
+
+        <div class="resuld">
+            <div>
+
+            <p id="reno"></p>
+            <p id="name"></p>
+            <p id="dob"></p>
+            <p id="cou"></p>
+            <p id="coll"></p>
+            <p id="em"></p>
+            <p id="mob"></p>
+            <p id="abc"></p>
+            </div>
+
+            <img src="#" alt="Student img" >
+        </div>
+    </div>
+    <script>
+        var button=document.querySelector("button");
+        button.addEventListener('click',proceed);
+        function proceed(){
+            var reno=document.getElementById("reno");
+            var name=document.getElementById("name");
+            var dob=document.getElementById("dob");
+            var cou=document.getElementById("cou");
+            var coll=document.getElementById("coll");
+            var em=document.getElementById("em");
+            var mob=document.getElementById("mob");
+            var abc=document.getElementById("abc");
+
+
+           var rno=document.getElementById("rno").value;
+           var email=document.getElementById("email").value;
+           var mno=document.getElementById("mno").value;
+           let rollno=0,nam= null,birthdate=null,course=null,collage=null,emailid=null,Mobile=null,abcid=null;
+           switch(rno){
+            case "20211071401101":
+                rollno=20211071401101
+                nam="AJITH KUMAR R"
+                birthdate="--/--/----"
+                course="B.C.A. COMPUTER APPLICATIONS"
+                collage="107-THE MADURAI DIRAVIYAM THAYUMANAVAR HINDU COLLEGE"
+                emailid=email
+                Mobile=mno
+                abcid=401456514649
+                break
+                case "20211071401102":
+                rollno=20211071401102
+                nam="ARIHARAN L"
+                birthdate="--/--/----"
+                course="B.C.A. COMPUTER APPLICATIONS"
+                collage="107-THE MADURAI DIRAVIYAM THAYUMANAVAR HINDU COLLEGE"
+                emailid=email
+                Mobile=mno
+                abcid=512021442648
+                break
+                case "20211071401103":
+                rollno=20211071401103
+                nam="ARIRAM A"
+                birthdate="--/--/----"
+                course="B.C.A. COMPUTER APPLICATIONS"
+                collage="107-THE MADURAI DIRAVIYAM THAYUMANAVAR HINDU COLLEGE"
+                emailid=email
+                Mobile=mno
+                abcid=505214788154
+                break
+                case "20211071401104":
+                rollno=20211071401104
+                nam="ARULRAJ S"
+                birthdate="--/--/----"
+                course="B.C.A. COMPUTER APPLICATIONS"
+                collage="107-THE MADURAI DIRAVIYAM THAYUMANAVAR HINDU COLLEGE"
+                emailid=email
+                Mobile=mno
+                abcid=695017871652
+                break
+                case "20211071401108":
+                rollno=20211071401108
+                nam="KULASEKARAN K"
+                birthdate="--/--/----"
+                course="B.C.A. COMPUTER APPLICATIONS"
+                collage="107-THE MADURAI DIRAVIYAM THAYUMANAVAR HINDU COLLEGE"
+                emailid=email
+                Mobile=mno
+                abcid=198431760661
+                break
+                case "20211071401109":
+                rollno=20211071401109
+                nam="LAKSHMANAN L"
+                birthdate="--/--/----"
+                course="B.C.A. COMPUTER APPLICATIONS"
+                collage="107-THE MADURAI DIRAVIYAM THAYUMANAVAR HINDU COLLEGE"
+                emailid=email
+                Mobile=mno
+                abcid=364763000443
+                break
+                case "20211071401110":
+                rollno=20211071401110
+                nam="MARIMUTHU S"
+                birthdate="--/--/----"
+                course="B.C.A. COMPUTER APPLICATIONS"
+                collage="107-THE MADURAI DIRAVIYAM THAYUMANAVAR HINDU COLLEGE"
+                emailid=email
+                Mobile=mno
+                abcid=434883835056
+                break
+                case "20211071401101":
+                rollno=20211071401111
+                nam="MUTHUVEL S"
+                birthdate="--/--/----"
+                course="B.C.A. COMPUTER APPLICATIONS"
+                collage="107-THE MADURAI DIRAVIYAM THAYUMANAVAR HINDU COLLEGE"
+                emailid=email
+                Mobile=mno
+                abcid=790938124233
+                break
+                case "20211071401113":
+                rollno=20211071401113
+                nam="PRABHU RAM A"
+                birthdate="--/--/----"
+                course="B.C.A. COMPUTER APPLICATIONS"
+                collage="107-THE MADURAI DIRAVIYAM THAYUMANAVAR HINDU COLLEGE"
+                emailid=email
+                Mobile=mno
+                abcid=104470259777
+                break
+                case "20211071401114":
+                rollno=20211071401114
+                nam="PRASANNA HARI V"
+                birthdate="--/--/----"
+                course="B.C.A. COMPUTER APPLICATIONS"
+                collage="107-THE MADURAI DIRAVIYAM THAYUMANAVAR HINDU COLLEGE"
+                emailid=email
+                Mobile=mno
+                abcid=935438514613
+                break
+                case "20211071401115":
+                rollno=20211071401115
+                nam="PRAVEEN M"
+                birthdate="--/--/----"
+                course="B.C.A. COMPUTER APPLICATIONS"
+                collage="107-THE MADURAI DIRAVIYAM THAYUMANAVAR HINDU COLLEGE"
+                emailid=email
+                Mobile=mno
+                abcid=450207411955
+                break
+                case "20211071401116":
+                rollno=20211071401116
+                nam="RAMGANESH S"
+                birthdate="--/--/----"
+                course="B.C.A. COMPUTER APPLICATIONS"
+                collage="107-THE MADURAI DIRAVIYAM THAYUMANAVAR HINDU COLLEGE"
+                emailid=email
+                Mobile=mno
+                abcid=423724554012
+                break
+                case "20211071401117":
+                rollno=20211071401117
+                nam="SABARI S"
+                birthdate="--/--/----"
+                course="B.C.A. COMPUTER APPLICATIONS"
+                collage="107-THE MADURAI DIRAVIYAM THAYUMANAVAR HINDU COLLEGE"
+                emailid=email
+                Mobile=mno
+                abcid=581596041310
+                break
+                case "20211071401118":
+                rollno=20211071401118
+                nam="SAMUEL K"
+                birthdate="--/--/----"
+                course="B.C.A. COMPUTER APPLICATIONS"
+                collage="107-THE MADURAI DIRAVIYAM THAYUMANAVAR HINDU COLLEGE"
+                emailid=email
+                Mobile=mno
+                abcid=340319860252
+                break
+                case "20211071401120":
+                rollno=20211071401120
+                nam="SARAVANAN K"
+                birthdate="--/--/----"
+                course="B.C.A. COMPUTER APPLICATIONS"
+                collage="107-THE MADURAI DIRAVIYAM THAYUMANAVAR HINDU COLLEGE"
+                emailid=email
+                Mobile=mno
+                abcid=983122940189
+                break
+                case "20211071401122":
+                rollno=20211071401122
+                nam="SELVA SUBIRAMANIAN A"
+                birthdate="--/--/----"
+                course="B.C.A. COMPUTER APPLICATIONS"
+                collage="107-THE MADURAI DIRAVIYAM THAYUMANAVAR HINDU COLLEGE"
+                emailid=email
+                Mobile=mno
+                abcid=962119861132
+                break
+                case "20211071401123":
+                rollno=20211071401123
+                nam="SUBASH S"
+                birthdate="--/--/----"
+                course="B.C.A. COMPUTER APPLICATIONS"
+                collage="107-THE MADURAI DIRAVIYAM THAYUMANAVAR HINDU COLLEGE"
+                emailid=email
+                Mobile=mno
+                abcid=164737025030
+                break
+                case "20211071401124":
+                rollno=20211071401124
+                nam="SUBIRAMANIAN A"
+                birthdate="--/--/----"
+                course="B.C.A. COMPUTER APPLICATIONS"
+                collage="107-THE MADURAI DIRAVIYAM THAYUMANAVAR HINDU COLLEGE"
+                emailid=email
+                Mobile=mno
+                abcid=916676642611
+                break
+                case "20211071401127":
+                rollno=20211071401127
+                nam="VETRIVEL V S"
+                birthdate="--/--/----"
+                course="B.C.A. COMPUTER APPLICATIONS"
+                collage="107-THE MADURAI DIRAVIYAM THAYUMANAVAR HINDU COLLEGE"
+                emailid=email
+                Mobile=mno
+                abcid=538168659397
+                break
+            default:
+                rollno=rno
+                alert("Student Details Not Found")
+           }
+           reno.innerHTML="Registration No : "+" "+rollno;
+           name.innerHTML="Student Name : "+" "+nam;
+           dob.innerHTML= "DOB : "+" "+birthdate;
+           cou.innerHTML= "Course : "+" "+course;
+           coll.innerHTML="College Name : "+" "+collage;
+           em.innerHTML=  "Email id : "+" "+emailid;
+           mob.innerHTML="Mobile No : "+" "+Mobile;
+           abc.innerHTML="ABC ID : "+" "+abcid;
+           var img=document.querySelector("img");
+           img.style.display="block";
+
+        }
+    </script>
+</body>
+</html>
